@@ -5,22 +5,25 @@
   
 
   
-  <title>Hello World | Jonjs&#39; Blog</title>
+  <title>【Java】[Bukkit][1.16+] 格式化RGB色彩文本 | Jonjs&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="下面的代码可以向玩家 player 发送一条 RGB色彩(#XXXXXX)、低版本&amp;x色彩(&amp;0~&amp;f) 混合的消息： player.sendMessage(&quot;§x§C§C§0§0§0§0I still love you. §bBut you do not know...&quot;);  由此，我们可以看出，1.16+版本发送 RGB色彩(#XXXXXX) 对应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://blog.jonjs.cn/2021/09/04/hello-world/index.html">
+<meta property="og:title" content="【Java】[Bukkit][1.16+] 格式化RGB色彩文本">
+<meta property="og:url" content="https://blog.jonjs.cn/2021/09/04/java-minecraft-bukkit-rgb-text/index.html">
 <meta property="og:site_name" content="Jonjs&#39; Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="下面的代码可以向玩家 player 发送一条 RGB色彩(#XXXXXX)、低版本&amp;x色彩(&amp;0~&amp;f) 混合的消息： player.sendMessage(&quot;§x§C§C§0§0§0§0I still love you. §bBut you do not know...&quot;);  由此，我们可以看出，1.16+版本发送 RGB色彩(#XXXXXX) 对应">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-09-04T04:56:05.382Z">
-<meta property="article:modified_time" content="1985-10-26T08:15:00.000Z">
+<meta property="article:published_time" content="2021-09-04T15:47:06.000Z">
+<meta property="article:modified_time" content="2021-09-04T15:48:14.732Z">
 <meta property="article:author" content="Jonjs">
-<meta property="article:tag" content="Jonjs">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="jonjs">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mc">
+<meta property="article:tag" content="minecraft">
+<meta property="article:tag" content="我的世界">
+<meta property="article:tag" content="spigot">
+<meta property="article:tag" content="bukkit">
+<meta property="article:tag" content="rgb">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Jonjs&#39; Blog" type="application/atom+xml">
@@ -70,12 +73,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-java-minecraft-bukkit-rgb-text" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/09/04/hello-world/" class="article-date">
-  <time datetime="2021-09-04T04:56:05.382Z" itemprop="datePublished">2021-09-04</time>
+    <a href="/2021/09/04/java-minecraft-bukkit-rgb-text/" class="article-date">
+  <time datetime="2021-09-04T15:47:06.000Z" itemprop="datePublished">2021-09-04</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -84,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      【Java】[Bukkit][1.16+] 格式化RGB色彩文本
     </h1>
   
 
@@ -92,41 +99,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>下面的代码可以向玩家 player 发送一条 RGB色彩(#XXXXXX)、低版本&amp;x色彩(&amp;0~&amp;f) 混合的消息：</p>
+<pre><code>player.sendMessage(&quot;§x§C§C§0§0§0§0I still love you. §bBut you do not know...&quot;);
+</code></pre>
+<p>由此，我们可以看出，1.16+版本发送 RGB色彩(#XXXXXX) 对应的方式是：<br>§x§HEX颜色字符第1位§第2位§第3位§第4位§第5位§第6位</p>
+<p>这样一来，我们可以这样实现一段文本的色彩代码转换：</p>
+<p>[collapse]<br>[collapse-item label=”Java 代码 - 类(Class) - HexCodeUtils.java”]</p>
+<pre><code>public class HexCodeUtils &#123;
+    public static String translateHexCodes(String startTag, String endTag, String message) &#123;
+        Pattern hexPattern = Pattern.compile(String.valueOf(startTag) + &quot;([A-Fa-f0-9]&#123;6&#125;)&quot; + endTag);
+        return translate(hexPattern, message);
+    &#125;
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    private static String translate(Pattern hex, String message) &#123;
+        Matcher matcher = hex.matcher(message);
+        StringBuffer buffer = new StringBuffer(message.length() + 32);
+        while (matcher.find()) &#123;
+            String group = matcher.group(1);
+            matcher.appendReplacement(buffer,
+                &quot;§x§&quot; + group.charAt(0) + &quot;§&quot; + group.charAt(1) + &quot;§&quot; + group.charAt(2)
+                      + &quot;§&quot; + group.charAt(3) + &quot;§&quot; + group.charAt(4) + &quot;§&quot; + group.charAt(5));
+        &#125;
+        return ChatColor.translateAlternateColorCodes(&#39;&amp;&#39;, matcher.appendTail(buffer).toString());
+    &#125;
+&#125;
+</code></pre>
+<p>[/collapse-item]<br>[/collapse]</p>
+<p>发送信息时的调用方法:</p>
+<pre><code>String msg = &quot;&amp;#66CCFFNever gonna make you cry. &amp;aNever gonna say goodbye.&quot;;
+player.sendMessage(HexCodeUtils.translateHexCodes(&quot;&amp;#&quot;, &quot;&quot;, msg).replace(&quot;&amp;&quot;, &quot;§&quot;));
+// 参数1: 起始字符
+// 参数2: 结尾字符
+// 版本判断就不加了, 想实现低版本兼容的话, 最好判断一下版本吧
+// 如果无法匹配字符串, 建议把参数1, 参数2都转义一下
+</code></pre>
+<p>虽然在本例中用不上, 但还是另外附上 org.bukkit.Color 的文档链接:<br><a target="_blank" rel="noopener" href="https://bukkit.windit.net/javadoc/org/bukkit/Color.html">https://bukkit.windit.net/javadoc/org/bukkit/Color.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.jonjs.cn/2021/09/04/hello-world/" data-id="ckt5bjro10001ocv3h9jmf9xh" class="article-share-link">Share</a>
+      <a data-url="https://blog.jonjs.cn/2021/09/04/java-minecraft-bukkit-rgb-text/" data-id="ckt5yptl30000scv3eqcl5tlt" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bukkit/" rel="tag">bukkit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mc/" rel="tag">mc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/minecraft/" rel="tag">minecraft</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rgb/" rel="tag">rgb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spigot/" rel="tag">spigot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2021/09/04/reload/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          博客内容将在近期进行迁移
-        
-      </div>
-    </a>
   
+    <a href="/2021/09/04/java-fastjson-usage-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Java】 FastJson 库的实际使用 (1)</div>
+    </a>
   
 </nav>
 
