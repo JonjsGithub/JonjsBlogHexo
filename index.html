@@ -97,48 +97,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>下面的代码可以向玩家 player 发送一条 RGB色彩(#XXXXXX)、低版本&amp;x色彩(&amp;0~&amp;f) 混合的消息：</p>
-<pre><code>player.sendMessage(&quot;§x§C§C§0§0§0§0I still love you. §bBut you do not know...&quot;);
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">player.sendMessage(<span class="hljs-string">&quot;§x§C§C§0§0§0§0I still love you. §bBut you do not know...&quot;</span>);<br></code></pre></td></tr></table></figure>
+
 <p>由此，我们可以看出，1.16+版本发送 RGB色彩(#XXXXXX) 对应的方式是：<br>§x§HEX颜色字符第1位§第2位§第3位§第4位§第5位§第6位</p>
-<p>这样一来，我们可以这样实现一段文本的色彩代码转换：</p>
-<p>[collapse]<br>[collapse-item label=”Java 代码 - 类(Class) - HexCodeUtils.java”]</p>
-<pre><code>public class HexCodeUtils &#123;
-    public static String translateHexCodes(String startTag, String endTag, String message) &#123;
-        Pattern hexPattern = Pattern.compile(String.valueOf(startTag) + &quot;([A-Fa-f0-9]&#123;6&#125;)&quot; + endTag);
-        return translate(hexPattern, message);
-    &#125;
-
-    private static String translate(Pattern hex, String message) &#123;
-        Matcher matcher = hex.matcher(message);
-        StringBuffer buffer = new StringBuffer(message.length() + 32);
-        while (matcher.find()) &#123;
-            String group = matcher.group(1);
-            matcher.appendReplacement(buffer,
-                &quot;§x§&quot; + group.charAt(0) + &quot;§&quot; + group.charAt(1) + &quot;§&quot; + group.charAt(2)
-                      + &quot;§&quot; + group.charAt(3) + &quot;§&quot; + group.charAt(4) + &quot;§&quot; + group.charAt(5));
-        &#125;
-        return ChatColor.translateAlternateColorCodes(&#39;&amp;&#39;, matcher.appendTail(buffer).toString());
-    &#125;
-&#125;
-</code></pre>
-<p>[/collapse-item]<br>[/collapse]</p>
-<p>发送信息时的调用方法:</p>
-<pre><code>String msg = &quot;&amp;#66CCFFNever gonna make you cry. &amp;aNever gonna say goodbye.&quot;;
-player.sendMessage(HexCodeUtils.translateHexCodes(&quot;&amp;#&quot;, &quot;&quot;, msg).replace(&quot;&amp;&quot;, &quot;§&quot;));
-// 参数1: 起始字符
-// 参数2: 结尾字符
-// 版本判断就不加了, 想实现低版本兼容的话, 最好判断一下版本吧
-// 如果无法匹配字符串, 建议把参数1, 参数2都转义一下
-</code></pre>
-<p>虽然在本例中用不上, 但还是另外附上 org.bukkit.Color 的文档链接:<br><a target="_blank" rel="noopener" href="https://bukkit.windit.net/javadoc/org/bukkit/Color.html">https://bukkit.windit.net/javadoc/org/bukkit/Color.html</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2021/09/04/java-minecraft-bukkit-rgb-text/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       <a data-url="https://blog.jonjs.cn/2021/09/04/java-minecraft-bukkit-rgb-text/" data-id="ckt5yptl30000scv3eqcl5tlt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bukkit/" rel="tag">bukkit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mc/" rel="tag">mc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/minecraft/" rel="tag">minecraft</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rgb/" rel="tag">rgb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spigot/" rel="tag">spigot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bukkit/" rel="tag">bukkit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/minecraft/" rel="tag">minecraft</a></li></ul>
 
     </footer>
   </div>
@@ -176,23 +149,11 @@ player.sendMessage(HexCodeUtils.translateHexCodes(&quot;&amp;#&quot;, &quot;&quo
         <p>首先，可以使用Online JSON Viewer工具清晰地查看JSON的具体结构。<br><a target="_blank" rel="noopener" href="https://www.bejson.com/jsonviewernew/">https://www.bejson.com/jsonviewernew/</a></p>
 <p>让我们拿这段JSON文本来举例子吧：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;code&quot;</span>:<span class="hljs-string">&quot;200&quot;</span>,<span class="hljs-attr">&quot;updateTime&quot;</span>:<span class="hljs-string">&quot;2021-08-06T02:17+08:00&quot;</span>,<span class="hljs-attr">&quot;fxLink&quot;</span>:<span class="hljs-string">&quot;http://hfx.link/2ax1&quot;</span>,<span class="hljs-attr">&quot;now&quot;</span>:&#123;<span class="hljs-attr">&quot;obsTime&quot;</span>:<span class="hljs-string">&quot;2021-08-06T02:12+08:00&quot;</span>,<span class="hljs-attr">&quot;temp&quot;</span>:<span class="hljs-string">&quot;23&quot;</span>,<span class="hljs-attr">&quot;feelsLike&quot;</span>:<span class="hljs-string">&quot;24&quot;</span>,<span class="hljs-attr">&quot;icon&quot;</span>:<span class="hljs-string">&quot;101&quot;</span>,<span class="hljs-attr">&quot;text&quot;</span>:<span class="hljs-string">&quot;多云&quot;</span>,<span class="hljs-attr">&quot;wind360&quot;</span>:<span class="hljs-string">&quot;135&quot;</span>,<span class="hljs-attr">&quot;windDir&quot;</span>:<span class="hljs-string">&quot;东南风&quot;</span>,<span class="hljs-attr">&quot;windScale&quot;</span>:<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-attr">&quot;windSpeed&quot;</span>:<span class="hljs-string">&quot;8&quot;</span>,<span class="hljs-attr">&quot;humidity&quot;</span>:<span class="hljs-string">&quot;79&quot;</span>,<span class="hljs-attr">&quot;precip&quot;</span>:<span class="hljs-string">&quot;0.0&quot;</span>,<span class="hljs-attr">&quot;pressure&quot;</span>:<span class="hljs-string">&quot;1001&quot;</span>,<span class="hljs-attr">&quot;vis&quot;</span>:<span class="hljs-string">&quot;19&quot;</span>,<span class="hljs-attr">&quot;cloud&quot;</span>:<span class="hljs-string">&quot;91&quot;</span>,<span class="hljs-attr">&quot;dew&quot;</span>:<span class="hljs-string">&quot;21&quot;</span>&#125;,<span class="hljs-attr">&quot;refer&quot;</span>:&#123;<span class="hljs-attr">&quot;sources&quot;</span>:[<span class="hljs-string">&quot;Weather China&quot;</span>],<span class="hljs-attr">&quot;license&quot;</span>:[<span class="hljs-string">&quot;no commercial use&quot;</span>]&#125;&#125;<br></code></pre></td></tr></table></figure>
-
-
-<p>格式化后：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;200&quot;</span>,<br>  <span class="hljs-attr">&quot;updateTime&quot;</span>: <span class="hljs-string">&quot;2021-08-06T02:17+08:00&quot;</span>,<br>  <span class="hljs-attr">&quot;fxLink&quot;</span>: <span class="hljs-string">&quot;http://hfx.link/2ax1&quot;</span>,<br>  <span class="hljs-attr">&quot;now&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;obsTime&quot;</span>: <span class="hljs-string">&quot;2021-08-06T02:12+08:00&quot;</span>,<br>    <span class="hljs-attr">&quot;temp&quot;</span>: <span class="hljs-string">&quot;23&quot;</span>,<br>    <span class="hljs-attr">&quot;feelsLike&quot;</span>: <span class="hljs-string">&quot;24&quot;</span>,<br>    <span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;101&quot;</span>,<br>    <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;多云&quot;</span>,<br>    <span class="hljs-attr">&quot;wind360&quot;</span>: <span class="hljs-string">&quot;135&quot;</span>,<br>    <span class="hljs-attr">&quot;windDir&quot;</span>: <span class="hljs-string">&quot;东南风&quot;</span>,<br>    <span class="hljs-attr">&quot;windScale&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,<br>    <span class="hljs-attr">&quot;windSpeed&quot;</span>: <span class="hljs-string">&quot;8&quot;</span>,<br>    <span class="hljs-attr">&quot;humidity&quot;</span>: <span class="hljs-string">&quot;79&quot;</span>,<br>    <span class="hljs-attr">&quot;precip&quot;</span>: <span class="hljs-string">&quot;0.0&quot;</span>,<br>    <span class="hljs-attr">&quot;pressure&quot;</span>: <span class="hljs-string">&quot;1001&quot;</span>,<br>    <span class="hljs-attr">&quot;vis&quot;</span>: <span class="hljs-string">&quot;19&quot;</span>,<br>    <span class="hljs-attr">&quot;cloud&quot;</span>: <span class="hljs-string">&quot;91&quot;</span>,<br>    <span class="hljs-attr">&quot;dew&quot;</span>: <span class="hljs-string">&quot;21&quot;</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;refer&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;sources&quot;</span>: [<br>      <span class="hljs-string">&quot;Weather China&quot;</span><br>    ],<br>    <span class="hljs-attr">&quot;license&quot;</span>: [<br>      <span class="hljs-string">&quot;no commercial use&quot;</span><br>    ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-<p>在 Online Json Viewer 中的视图如下：<br><img src="https://jonjs.cn/usr/uploads/2021/08/532257388.png" alt="1.png"></p>
-<h1 id="重要总结："><a href="#重要总结：" class="headerlink" title="重要总结："></a>重要总结：</h1><p>前面图标为 <strong>{ }</strong> 的项所对应的 Class 为: <strong>JSONObject</strong><br>前面图标为 <strong>[ ]</strong> 的项所对应的 Class 为: <strong>JSONArray</strong><br>前面图标为 <strong>方块</strong> 的项所对应的 Class中的方法 为: <strong>JSONObject.getT()</strong> 或 <strong>JSONArray.getT()</strong></p>
-<h1 id="Java-示例："><a href="#Java-示例：" class="headerlink" title="Java 示例："></a>Java 示例：</h1><p><em>下面的代码用来获取 license.0 对应的文本(String)值</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//主类代码省略</span><br>String json = <span class="hljs-string">&quot;JSON文本, 此处略&quot;</span>;<br>JSONObject obj = JSON.parseObject(json);<br>JSONObject obj_refer = obj.getJSONObject(<span class="hljs-string">&quot;refer&quot;</span>);   <span class="hljs-comment">//refer</span><br>JSONArray arr_license = obj_refer.getJSONArray(<span class="hljs-string">&quot;license&quot;</span>);   <span class="hljs-comment">//refer.license</span><br>String str_license = arr_license.getString(<span class="hljs-number">0</span>); <span class="hljs-comment">//refer.license.0</span><br>System.out.println(str_license);<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例输出:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">no commercial use<br></code></pre></td></tr></table></figure>
-
-
-
-
+        
+          <p class="article-more-link">
+            <a href="/2021/09/04/java-fastjson-usage-1/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -315,7 +276,7 @@ player.sendMessage(HexCodeUtils.translateHexCodes(&quot;&amp;#&quot;, &quot;&quo
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bukkit/" rel="tag">bukkit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fastjson/" rel="tag">fastjson</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mc/" rel="tag">mc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/minecraft/" rel="tag">minecraft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rgb/" rel="tag">rgb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spigot/" rel="tag">spigot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bukkit/" rel="tag">bukkit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fastjson/" rel="tag">fastjson</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/minecraft/" rel="tag">minecraft</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -325,7 +286,7 @@ player.sendMessage(HexCodeUtils.translateHexCodes(&quot;&amp;#&quot;, &quot;&quo
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bukkit/" style="font-size: 10px;">bukkit</a> <a href="/tags/fastjson/" style="font-size: 10px;">fastjson</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/mc/" style="font-size: 10px;">mc</a> <a href="/tags/minecraft/" style="font-size: 10px;">minecraft</a> <a href="/tags/rgb/" style="font-size: 10px;">rgb</a> <a href="/tags/spigot/" style="font-size: 10px;">spigot</a> <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="font-size: 10px;">我的世界</a>
+      <a href="/tags/bukkit/" style="font-size: 10px;">bukkit</a> <a href="/tags/fastjson/" style="font-size: 10px;">fastjson</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/minecraft/" style="font-size: 10px;">minecraft</a>
     </div>
   </div>
 
