@@ -20,34 +20,38 @@
     var CONFIG = {"hostname":"blog.jonjs.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="catch-22 in loop">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonjs&#39; Blog">
-<meta property="og:url" content="https://blog.jonjs.cn/index.html">
+  <meta name="description" content="效果动图 车站数据12306(客站): https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;resources&#x2F;js&#x2F;framework&#x2F;station_name.jsmoerail.ml(所有站点, ~270KB): http:&#x2F;&#x2F;moerail.ml&#x2F;station.js 代码数据转换 - data-transfer.php 代码: &lt;?php   $s &#x3D; file_get_conte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【PHP】 抓取并运用 12306 车站数据">
+<meta property="og:url" content="https://blog.jonjs.cn/2023/04/01/php-parse12306-1/index.html">
 <meta property="og:site_name" content="Jonjs&#39; Blog">
-<meta property="og:description" content="catch-22 in loop">
+<meta property="og:description" content="效果动图 车站数据12306(客站): https:&#x2F;&#x2F;kyfw.12306.cn&#x2F;otn&#x2F;resources&#x2F;js&#x2F;framework&#x2F;station_name.jsmoerail.ml(所有站点, ~270KB): http:&#x2F;&#x2F;moerail.ml&#x2F;station.js 代码数据转换 - data-transfer.php 代码: &lt;?php   $s &#x3D; file_get_conte">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/04/01/UwrcXdePx5om3Ep.gif">
+<meta property="article:published_time" content="2023-04-01T06:04:37.000Z">
+<meta property="article:modified_time" content="2023-04-01T07:24:29.817Z">
 <meta property="article:author" content="Jonjs">
-<meta property="article:tag" content="Jonjs">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="jonjs">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="12306">
+<meta property="article:tag" content="railway">
+<meta property="article:tag" content="moerail">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/04/01/UwrcXdePx5om3Ep.gif">
 
-<link rel="canonical" href="https://blog.jonjs.cn/">
+<link rel="canonical" href="https://blog.jonjs.cn/2023/04/01/php-parse12306-1/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Jonjs' Blog</title>
+  <title>【PHP】 抓取并运用 12306 车站数据 | Jonjs' Blog</title>
   
 
 
@@ -146,9 +150,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -164,10 +169,9 @@
       <meta itemprop="name" content="Jonjs' Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/01/php-parse12306-1/" class="post-title-link" itemprop="url">【PHP】 抓取并运用 12306 车站数据</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          【PHP】 抓取并运用 12306 车站数据
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -214,7 +218,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="效果动图"><a href="#效果动图" class="headerlink" title="效果动图"></a>效果动图</h2><p><img data-src="https://s2.loli.net/2023/04/01/UwrcXdePx5om3Ep.gif" alt="show.gif"></p>
+        <h2 id="效果动图"><a href="#效果动图" class="headerlink" title="效果动图"></a>效果动图</h2><p><img data-src="https://s2.loli.net/2023/04/01/UwrcXdePx5om3Ep.gif" alt="show.gif"></p>
 <h2 id="车站数据"><a href="#车站数据" class="headerlink" title="车站数据"></a>车站数据</h2><p>12306(客站): <a target="_blank" rel="noopener" href="https://kyfw.12306.cn/otn/resources/js/framework/station_name.js">https://kyfw.12306.cn/otn/resources/js/framework/station_name.js</a><br>moerail.ml(所有站点, ~270KB): <a target="_blank" rel="noopener" href="http://moerail.ml/station.js">http://moerail.ml/station.js</a></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><strong>数据转换 - <code>data-transfer.php</code> 代码:</strong></p>
 <pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
@@ -410,857 +414,60 @@ bjd|北京东|BOP|12158|京2<span aria-hidden="true" class="line-numbers-rows"><
 
 
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2022/02/16/java-dragonwell-jdk-centos-installation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/16/java-dragonwell-jdk-centos-installation/" class="post-title-link" itemprop="url">【Java】 CentOS 7 安装 Alibaba Dragonwell JDK</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-02-16 12:01:51 / 修改时间：13:02:51" itemprop="dateCreated datePublished" datetime="2022-02-16T12:01:51+08:00">2022-02-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本教程以下载 <strong>Dragonwell JDK 17</strong> 为例<br>本教程所涉及到的文件操作所在目录均为 “~/“ (SSH 登录后用户自动进入的目录)</p>
-<p><strong>Dragonwell JDK 官方站: <a target="_blank" rel="noopener" href="https://www.dragonwell-jdk.io/">https://www.dragonwell-jdk.io/</a></strong><br><strong>Dragonwell JDK 下载镜像: <a target="_blank" rel="noopener" href="https://github.com/alibaba/dragonwell17/wiki/Mirrors-for-download-(%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F)">https://github.com/alibaba/dragonwell17/wiki/Mirrors-for-download-(%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F)</a></strong><br><strong>Dragonwell JDK Github: <a target="_blank" rel="noopener" href="https://github.com/alibaba/dragonwell17/">https://github.com/alibaba/dragonwell17/</a></strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/02/16/java-dragonwell-jdk-centos-installation/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Jonjs
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.jonjs.cn/2023/04/01/php-parse12306-1/" title="【PHP】 抓取并运用 12306 车站数据">https://blog.jonjs.cn/2023/04/01/php-parse12306-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/php/" rel="tag"># php</a>
+              <a href="/tags/12306/" rel="tag"># 12306</a>
+              <a href="/tags/railway/" rel="tag"># railway</a>
+              <a href="/tags/moerail/" rel="tag"># moerail</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/07/nukkit-plugin-install-shell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/07/nukkit-plugin-install-shell/" class="post-title-link" itemprop="url">Nukkit 常用插件下载一键脚本 (Linux)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-07 13:30:00 / 修改时间：13:32:51" itemprop="dateCreated datePublished" datetime="2021-09-07T13:30:00+08:00">2021-09-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>268</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>下载和执行该脚本前, 请将当前目录<strong>切换到 Nukkit</strong> 根目录 (与 plugins 目录同级)</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd .&#x2F;Nukkit&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<p><strong>CentOS 6, 7, 8:</strong></p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yum install -y wget &amp;&amp; wget http:&#x2F;&#x2F;api2.jonjs.cn&#x2F;Minecraft&#x2F;Nukkit&#x2F;plugin-install.sh -O plugin-install.sh &amp;&amp; chmod 777 plugin-install.sh &amp;&amp; sh plugin-install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/07/java-minecraft-bukkit-spawn-particle-with-rgb-color/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/07/java-minecraft-bukkit-spawn-particle-with-rgb-color/" class="post-title-link" itemprop="url">【Java】[Bukkit] 渲染粒子效果并自定义粒子颜色</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-07 13:25:00 / 修改时间：13:32:51" itemprop="dateCreated datePublished" datetime="2021-09-07T13:25:00+08:00">2021-09-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>496</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>开发环境: Spigot-1.16.5</strong><br><strong>JDK 版本: 1.8</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/07/java-minecraft-bukkit-spawn-particle-with-rgb-color/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/07/java-minecraft-spigot-send-actionbar-message/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/07/java-minecraft-spigot-send-actionbar-message/" class="post-title-link" itemprop="url">【Java】[Spigot] 向玩家发送ActionBar等消息(无需使用NMS、反射)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-07 13:23:00 / 修改时间：13:32:51" itemprop="dateCreated datePublished" datetime="2021-09-07T13:23:00+08:00">2021-09-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>318</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>开发环境: Spigot-1.16.5</strong><br><strong>JDK 版本: 1.8</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/07/java-minecraft-spigot-send-actionbar-message/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/16/java-dragonwell-jdk-centos-installation/" rel="prev" title="【Java】 CentOS 7 安装 Alibaba Dragonwell JDK">
+      <i class="fa fa-chevron-left"></i> 【Java】 CentOS 7 安装 Alibaba Dragonwell JDK
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/07/java-minecraft-bukkit-add-potion-effect/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/07/java-minecraft-bukkit-add-potion-effect/" class="post-title-link" itemprop="url">【Java】[Bukkit] 给玩家新增药水效果</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-07 13:21:00 / 修改时间：13:32:51" itemprop="dateCreated datePublished" datetime="2021-09-07T13:21:00+08:00">2021-09-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>733</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>开发环境: Spigot-1.16.5</strong><br><strong>JDK 版本: 1.8</strong></p>
-<p>如果玩家已经有某个药水效果，那么 add 会失败<br>所以新增某药水效果之前要移除其原有的该药水效果</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/07/java-minecraft-bukkit-add-potion-effect/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/04/java-minecraft-bukkit-rgb-text/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/04/java-minecraft-bukkit-rgb-text/" class="post-title-link" itemprop="url">【Java】[Bukkit][1.16+] 格式化RGB色彩文本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-04 23:47:06" itemprop="dateCreated datePublished" datetime="2021-09-04T23:47:06+08:00">2021-09-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-07 13:32:51" itemprop="dateModified" datetime="2021-09-07T13:32:51+08:00">2021-09-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>下面的代码可以向玩家 player 发送一条 RGB色彩(#XXXXXX)、低版本&amp;x色彩(&amp;0~&amp;f) 混合的消息：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">player<span class="token punctuation">.</span><span class="token function">sendMessage</span><span class="token punctuation">(</span><span class="token string">"§x§C§C§0§0§0§0I still love you. §bBut you do not know..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>由此，我们可以看出，1.16+版本发送 RGB色彩(#XXXXXX) 对应的方式是：<br>§x§HEX颜色字符第1位§第2位§第3位§第4位§第5位§第6位</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/04/java-minecraft-bukkit-rgb-text/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/04/java-fastjson-usage-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/04/java-fastjson-usage-1/" class="post-title-link" itemprop="url">【Java】 FastJson 库的实际使用 (1)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-04 23:38:22" itemprop="dateCreated datePublished" datetime="2021-09-04T23:38:22+08:00">2021-09-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-07 13:32:51" itemprop="dateModified" datetime="2021-09-07T13:32:51+08:00">2021-09-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>首先，可以使用Online JSON Viewer工具清晰地查看JSON的具体结构。<br><a target="_blank" rel="noopener" href="https://www.bejson.com/jsonviewernew/">https://www.bejson.com/jsonviewernew/</a></p>
-<p>让我们拿这段JSON文本来举例子吧：</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span><span class="token property">"code"</span><span class="token operator">:</span><span class="token string">"200"</span><span class="token punctuation">,</span><span class="token property">"updateTime"</span><span class="token operator">:</span><span class="token string">"2021-08-06T02:17+08:00"</span><span class="token punctuation">,</span><span class="token property">"fxLink"</span><span class="token operator">:</span><span class="token string">"http://hfx.link/2ax1"</span><span class="token punctuation">,</span><span class="token property">"now"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token property">"obsTime"</span><span class="token operator">:</span><span class="token string">"2021-08-06T02:12+08:00"</span><span class="token punctuation">,</span><span class="token property">"temp"</span><span class="token operator">:</span><span class="token string">"23"</span><span class="token punctuation">,</span><span class="token property">"feelsLike"</span><span class="token operator">:</span><span class="token string">"24"</span><span class="token punctuation">,</span><span class="token property">"icon"</span><span class="token operator">:</span><span class="token string">"101"</span><span class="token punctuation">,</span><span class="token property">"text"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span><span class="token property">"wind360"</span><span class="token operator">:</span><span class="token string">"135"</span><span class="token punctuation">,</span><span class="token property">"windDir"</span><span class="token operator">:</span><span class="token string">"东南风"</span><span class="token punctuation">,</span><span class="token property">"windScale"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token property">"windSpeed"</span><span class="token operator">:</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"79"</span><span class="token punctuation">,</span><span class="token property">"precip"</span><span class="token operator">:</span><span class="token string">"0.0"</span><span class="token punctuation">,</span><span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"1001"</span><span class="token punctuation">,</span><span class="token property">"vis"</span><span class="token operator">:</span><span class="token string">"19"</span><span class="token punctuation">,</span><span class="token property">"cloud"</span><span class="token operator">:</span><span class="token string">"91"</span><span class="token punctuation">,</span><span class="token property">"dew"</span><span class="token operator">:</span><span class="token string">"21"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token property">"refer"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token property">"sources"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"Weather China"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token property">"license"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"no commercial use"</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/04/java-fastjson-usage-1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/04/reload/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/04/reload/" class="post-title-link" itemprop="url">博客内容将在近期进行迁移</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-04 14:18:12" itemprop="dateCreated datePublished" datetime="2021-09-04T14:18:12+08:00">2021-09-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-05 18:13:26" itemprop="dateModified" datetime="2021-09-05T18:13:26+08:00">2021-09-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>82</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>大家好! 为了保证博客的高在线率及站点SSL的长期有效, 我将在近期对博客内容进行迁移.</p>
-<p>新版博客采用 Hexo + Github Pages 服务.<br>原博客仍将保留, 但不推荐访问.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.jonjs.cn/2021/09/04/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=1931270410&s=100">
-      <meta itemprop="name" content="Jonjs">
-      <meta itemprop="description" content="catch-22 in loop">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonjs' Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/04/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-04 12:56:05" itemprop="dateCreated datePublished" datetime="2021-09-04T12:56:05+08:00">2021-09-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-05 18:13:26" itemprop="dateModified" datetime="2021-09-05T18:13:26+08:00">2021-09-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>353</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1307,6 +514,7 @@ bjd|北京东|BOP|12158|京2<span aria-hidden="true" class="line-numbers-rows"><
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%8A%A8%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">效果动图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%A6%E7%AB%99%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">车站数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E8%A7%A3%E6%9E%90-moerail%E6%95%B0%E6%8D%AE%E4%B8%BA%E5%87%86"><span class="nav-number">4.</span> <span class="nav-text">过程解析 (moerail数据为准)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1437,6 +645,25 @@ bjd|北京东|BOP|12158|京2<span aria-hidden="true" class="line-numbers-rows"><
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '409dddcfc66f60406164',
+      clientSecret: '11c5354c03fb53172d8cb1679b39e07e6dd79901',
+      repo        : 'JonjsBlogHexoGitalkComment',
+      owner       : 'JonjsGithub',
+      admin       : ['JonjsGithub'],
+      id          : 'a8a68505a411f370f87eb0bd06ff7744',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
